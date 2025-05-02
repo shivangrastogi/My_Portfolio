@@ -4,7 +4,6 @@ import useIsMobile from "./components/hooks/useIsMobile";
 import { About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, StarsCanvas } from "./components";
 
 const App = () => {
-  const isMobile = useIsMobile()
   return (
     <BrowserRouter>
       <div className='relative z-0 bg-primary'>
@@ -19,7 +18,7 @@ const App = () => {
         <Feedbacks />
         <div className='relative z-0'>
           <Contact />
-          {!isMobile && <StarsCanvas />}
+          <StarsCanvas />
         </div>
       </div>
     </BrowserRouter>
