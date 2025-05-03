@@ -114,61 +114,6 @@ const technologies = [
   },
 ];
 
-// const experiences = [
-//   {
-//     title: "React.js Developer",
-//     company_name: "Starbucks",
-//     icon: starbucks,
-//     iconBg: "#383E56",
-//     date: "March 2020 - April 2021",
-//     points: [
-//       "Developing and maintaining web applications using React.js and other related technologies.",
-//       "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-//       "Implementing responsive design and ensuring cross-browser compatibility.",
-//       "Participating in code reviews and providing constructive feedback to other developers.",
-//     ],
-//   },
-//   {
-//     title: "React Native Developer",
-//     company_name: "Tesla",
-//     icon: tesla,
-//     iconBg: "#E6DEDD",
-//     date: "Jan 2021 - Feb 2022",
-//     points: [
-//       "Developing and maintaining web applications using React.js and other related technologies.",
-//       "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-//       "Implementing responsive design and ensuring cross-browser compatibility.",
-//       "Participating in code reviews and providing constructive feedback to other developers.",
-//     ],
-//   },
-//   {
-//     title: "Web Developer",
-//     company_name: "Shopify",
-//     icon: shopify,
-//     iconBg: "#383E56",
-//     date: "Jan 2022 - Jan 2023",
-//     points: [
-//       "Developing and maintaining web applications using React.js and other related technologies.",
-//       "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-//       "Implementing responsive design and ensuring cross-browser compatibility.",
-//       "Participating in code reviews and providing constructive feedback to other developers.",
-//     ],
-//   },
-//   {
-//     title: "Full stack Developer",
-//     company_name: "Meta",
-//     icon: meta,
-//     iconBg: "#E6DEDD",
-//     date: "Jan 2023 - Present",
-//     points: [
-//       "Developing and maintaining web applications using React.js and other related technologies.",
-//       "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-//       "Implementing responsive design and ensuring cross-browser compatibility.",
-//       "Participating in code reviews and providing constructive feedback to other developers.",
-//     ],
-//   },
-// ];
-
 const experiences = [
   {
     title: "Web Developer Intern",
@@ -184,34 +129,6 @@ const experiences = [
     ],
   },
 ];
-
-
-// const testimonials = [
-//   {
-//     testimonial:
-//       "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-//     name: "Sara Lee",
-//     designation: "CFO",
-//     company: "Acme Co",
-//     image: "https://randomuser.me/api/portraits/women/4.jpg",
-//   },
-//   {
-//     testimonial:
-//       "I've never met a web developer who truly cares about their clients' success like Rick does.",
-//     name: "Chris Brown",
-//     designation: "COO",
-//     company: "DEF Corp",
-//     image: "https://randomuser.me/api/portraits/men/5.jpg",
-//   },
-//   {
-//     testimonial:
-//       "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-//     name: "Lisa Wang",
-//     designation: "CTO",
-//     company: "456 Enterprises",
-//     image: "https://randomuser.me/api/portraits/women/6.jpg",
-//   },
-// ];
 
 const testimonials = [
   {
@@ -298,74 +215,67 @@ const testimonials = [
 // ];
 const projects = [
   {
-    name: "AuraPulse - Mood-based Music Recommender",
+    name: "AuraPulse – AI Mood Music Recommender",
     description:
-      "CNN-based system that detects user mood with 71%+ accuracy and recommends personalized playlists.",
+      "AI-powered system detecting user mood with over 71% accuracy using CNN and generating personalized playlists based on detected emotions and preferences.",
     tags: [
       { name: "python", color: "blue-text-gradient" },
       { name: "tensorflow", color: "green-text-gradient" },
       { name: "react", color: "pink-text-gradient" },
     ],
-    // image: aurapulseImage,  // add project image to assets
     image: carrent,
     source_code_link: "https://github.com/shivangrastogi/Final-Year-Project.git",
   },
   {
-    name: "H2O Sync",
+    name: "H2O Sync – Water Issue Reporting App",
     description:
-      "Android app using Google Maps API and Firebase to report water-related issues by sharing live location.",
+      "Android app using Maps API and Firebase that allows users to report water-related civic issues with live location sharing and image upload support.",
     tags: [
       { name: "androidstudio", color: "blue-text-gradient" },
       { name: "firebase", color: "green-text-gradient" },
       { name: "googlemapsapi", color: "pink-text-gradient" },
     ],
-    // image: h2osyncImage,  // add image
-    image: jobit,  // add image
-
+    image: jobit,
     source_code_link: "https://github.com/shivangrastogi/H2O-SYNC.git",
   },
   {
-    name: "Educational Website",
+    name: "EduPortal – B.Tech Learning Platform",
     description:
-      "B.Tech library website providing study materials and lecture access using HTML, CSS, and JavaScript.",
+      "Responsive web portal providing students with categorized study material, lecture notes, downloadable resources, and exam preparation guides.",
     tags: [
       { name: "html", color: "blue-text-gradient" },
       { name: "css", color: "green-text-gradient" },
       { name: "javascript", color: "pink-text-gradient" },
     ],
-    // image: eduWebsiteImage,  // add image
-    image: tripguide,  // add image
-
+    image: tripguide,
     source_code_link: "https://github.com/shivangrastogi/btechlibrary.git",
   },
   {
-    name: "Synex - Personal AI Assistant",
+    name: "Synex – Python Desktop Voice Assistant",
     description:
-      "A desktop-based virtual assistant with a custom PyQt5 interface that listens for voice commands, automates tasks, and integrates multiple Python modules for jokes, advice, battery status, and system automation.",
+      "AI-based desktop assistant with PyQt5 GUI that listens to commands, automates daily tasks, fetches online data, and interacts with APIs efficiently.",
     tags: [
       { name: "python", color: "blue-text-gradient" },
       { name: "pyqt5", color: "green-text-gradient" },
       { name: "multithreading", color: "pink-text-gradient" },
     ],
-    // image: jarvisImage,  // add project image to assets
-    image: tripguide,  // replace with actual image reference
+    image: tripguide,
     source_code_link: "https://github.com/shivangrastogi/Synex---Personal-AI-Assistant.git",
   },
   {
-    name: "Landslide Detection Model",
+    name: "GeoAlert – Landslide Warning System",
     description:
-      "Arduino-based system that sends SMS alerts when unstable soil conditions are detected.",
+      "IoT-enabled Arduino system that detects unstable soil and sends instant SMS alerts using real-time sensors and remote wireless monitoring modules.",
     tags: [
       { name: "arduino", color: "blue-text-gradient" },
       { name: "iot", color: "green-text-gradient" },
       { name: "smsapi", color: "pink-text-gradient" },
     ],
-    // image: landslideImage,  // add image
-    image: tripguide,  // add image
-
+    image: tripguide,
     source_code_link: "https://github.com/shivangrastogi/Landslide-Detection.git",
   },
 ];
+
 
 
 export { services, technologies, experiences, testimonials, projects };

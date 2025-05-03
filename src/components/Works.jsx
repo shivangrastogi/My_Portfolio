@@ -66,7 +66,7 @@ const ProjectCard = ({
 const Works = () => {
 
   const isMobile = useIsMobile();
-  
+
   return (
     <>
       {isMobile ? (
