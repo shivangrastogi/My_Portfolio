@@ -308,7 +308,7 @@ const projects = [
     ],
     // image: aurapulseImage,  // add project image to assets
     image: carrent,
-    source_code_link: "https://github.com/shivangrastogi/AuraPulse",
+    source_code_link: "https://github.com/shivangrastogi/Final-Year-Project.git",
   },
   {
     name: "H2O Sync",
@@ -322,7 +322,7 @@ const projects = [
     // image: h2osyncImage,  // add image
     image: jobit,  // add image
 
-    source_code_link: "https://github.com/shivangrastogi/H2OSync",
+    source_code_link: "https://github.com/shivangrastogi/H2O-SYNC.git",
   },
   {
     name: "Educational Website",
@@ -336,7 +336,20 @@ const projects = [
     // image: eduWebsiteImage,  // add image
     image: tripguide,  // add image
 
-    source_code_link: "https://github.com/shivangrastogi/EduLibrary",
+    source_code_link: "https://github.com/shivangrastogi/btechlibrary.git",
+  },
+  {
+    name: "Synex - Personal AI Assistant",
+    description:
+      "A desktop-based virtual assistant with a custom PyQt5 interface that listens for voice commands, automates tasks, and integrates multiple Python modules for jokes, advice, battery status, and system automation.",
+    tags: [
+      { name: "python", color: "blue-text-gradient" },
+      { name: "pyqt5", color: "green-text-gradient" },
+      { name: "multithreading", color: "pink-text-gradient" },
+    ],
+    // image: jarvisImage,  // add project image to assets
+    image: tripguide,  // replace with actual image reference
+    source_code_link: "https://github.com/shivangrastogi/Synex---Personal-AI-Assistant.git",
   },
   {
     name: "Landslide Detection Model",
@@ -350,7 +363,7 @@ const projects = [
     // image: landslideImage,  // add image
     image: tripguide,  // add image
 
-    source_code_link: "https://github.com/shivangrastogi/LandslideDetector",
+    source_code_link: "https://github.com/shivangrastogi/Landslide-Detection.git",
   },
 ];
 
