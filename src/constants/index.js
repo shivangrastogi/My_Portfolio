@@ -25,6 +25,11 @@ import {
   threejs,
 } from "../assets";
 
+import Aurapulse from "../assets/Aurapulse.png"
+import BTechLib from "../assets/B.Tech.png"
+import Synex from "../assets/Synex.png"
+import H2OSync from "../assets/H2O.jpg"
+
 export const navLinks = [
   {
     id: "about",
@@ -132,21 +137,22 @@ const experiences = [
 
 const testimonials = [
   {
-    testimonial: "Shivang showed exceptional skill and commitment during his internship, consistently delivering high-quality code.",
+    testimonial:
+      "Shivang showed exceptional skill and commitment during his internship, consistently delivering high-quality code.",
     name: "Project Supervisor",
     designation: "Team Lead",
     company: "AP Mobility India",
     image: "https://randomuser.me/api/portraits/men/4.jpg",
   },
   {
-    testimonial: "His problem-solving mindset and enthusiasm made a noticeable impact on our project outcomes.",
+    testimonial:
+      "His problem-solving mindset and enthusiasm made a noticeable impact on our project outcomes.",
     name: "Mentor",
     designation: "Senior Developer",
     company: "AP Mobility India",
     image: "https://randomuser.me/api/portraits/women/5.jpg",
   },
 ];
-
 
 // const projects = [
 //   {
@@ -223,8 +229,9 @@ const projects = [
       { name: "tensorflow", color: "green-text-gradient" },
       { name: "react", color: "pink-text-gradient" },
     ],
-    image: carrent,
-    source_code_link: "https://github.com/shivangrastogi/Final-Year-Project.git",
+    image: Aurapulse,
+    source_code_link:
+      "https://github.com/shivangrastogi/Final-Year-Project.git",
   },
   {
     name: "H2O Sync – Water Issue Reporting App",
@@ -235,7 +242,7 @@ const projects = [
       { name: "firebase", color: "green-text-gradient" },
       { name: "googlemapsapi", color: "pink-text-gradient" },
     ],
-    image: jobit,
+    image: H2OSync,
     source_code_link: "https://github.com/shivangrastogi/H2O-SYNC.git",
   },
   {
@@ -247,7 +254,7 @@ const projects = [
       { name: "css", color: "green-text-gradient" },
       { name: "javascript", color: "pink-text-gradient" },
     ],
-    image: tripguide,
+    image: BTechLib,
     source_code_link: "https://github.com/shivangrastogi/btechlibrary.git",
   },
   {
@@ -259,8 +266,9 @@ const projects = [
       { name: "pyqt5", color: "green-text-gradient" },
       { name: "multithreading", color: "pink-text-gradient" },
     ],
-    image: tripguide,
-    source_code_link: "https://github.com/shivangrastogi/Synex---Personal-AI-Assistant.git",
+    image: Synex,
+    source_code_link:
+      "https://github.com/shivangrastogi/Synex---Personal-AI-Assistant.git",
   },
   {
     name: "GeoAlert – Landslide Warning System",
@@ -272,10 +280,9 @@ const projects = [
       { name: "smsapi", color: "pink-text-gradient" },
     ],
     image: tripguide,
-    source_code_link: "https://github.com/shivangrastogi/Landslide-Detection.git",
+    source_code_link:
+      "https://github.com/shivangrastogi/Landslide-Detection.git",
   },
 ];
-
-
 
 export { services, technologies, experiences, testimonials, projects };
