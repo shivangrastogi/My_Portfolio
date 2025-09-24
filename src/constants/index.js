@@ -16,7 +16,8 @@ import {
   figma,
   docker,
   meta,
-  starbucks,
+  sehatUP,
+  APMobility,
   tesla,
   shopify,
   carrent,
@@ -25,10 +26,10 @@ import {
   threejs,
 } from "../assets";
 
-import Aurapulse from "../assets/Aurapulse.png"
-import BTechLib from "../assets/B.Tech.png"
-import Synex from "../assets/Synex.png"
-import H2OSync from "../assets/H2O.jpg"
+import Aurapulse from "../assets/Aurapulse.png";
+import BTechLib from "../assets/B.Tech.png";
+import Synex from "../assets/Synex.png";
+import H2OSync from "../assets/H2O.jpg";
 
 export const navLinks = [
   {
@@ -122,15 +123,45 @@ const technologies = [
 const experiences = [
   {
     title: "Web Developer Intern",
-    company_name: "AP MOBILITY INDIA PVT LTD",
-    // icon: apmobilityIcon,  // add this logo to assets
-    icon: meta,
-    iconBg: "#383E56",
+    company_name: "AP Mobility India Pvt Ltd",
+    icon: APMobility,
+    iconBg: "#ffff",
     date: "Jul 2024 – Aug 2024",
     points: [
-      "Developed and maintained web applications using HTML, CSS, JavaScript, and React.js.",
-      "Integrated Bootstrap for responsive UI components, enhancing user experience.",
-      "Collaborated with cross-functional teams to deliver project milestones in a hybrid work environment.",
+      "Developed responsive web apps with React.js, HTML, CSS, and JS.",
+      "Integrated Bootstrap UI, boosting engagement on mobile devices.",
+      "Collaborated in a hybrid team to deliver client-ready demos on time.",
+      "Applied best practices for performance and cross-browser support.",
+    ],
+  },
+  {
+    title: "Shopify & Full Stack Developer Intern",
+    company_name: "sehatUP",
+    icon: sehatUP,
+    iconBg: "#ffff",
+    date: "May 2025 – Aug 2025",
+    points: [
+      "Created custom Shopify themes and reusable UI components.",
+      "Integrated Firebase for auth, database, and live updates.",
+      "Built an internal quiz + dashboard system for seminars.",
+      "Optimized UI responsiveness across devices and browsers.",
+      "Automated workflows, reducing manual tasks for the team.",
+      "Converted complex requirements into scalable solutions.",
+    ],
+  },
+  {
+    title: "Shopify & Full Stack Developer",
+    company_name: "sehatUP",
+    icon: sehatUP,
+    iconBg: "#ffff",
+    date: "Aug 2025 – Present",
+    points: [
+      "Leading development of secure login with role-based access.",
+      "Engineering scalable Shopify storefronts with optimized flows.",
+      "Enhancing seminar dashboard with analytics and scoring tools.",
+      "Building automation scripts to streamline team workflows.",
+      "Driving adoption of Git workflows, reviews, and responsive design.",
+      "Collaborating cross-functionally for smooth feature rollouts.",
     ],
   },
 ];
@@ -154,89 +185,23 @@ const testimonials = [
   },
 ];
 
-// const projects = [
-//   {
-//     name: "Car Rent",
-//     description:
-//       "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
-//     tags: [
-//       {
-//         name: "react",
-//         color: "blue-text-gradient",
-//       },
-//       {
-//         name: "mongodb",
-//         color: "green-text-gradient",
-//       },
-//       {
-//         name: "tailwind",
-//         color: "pink-text-gradient",
-//       },
-//     ],
-//     image: carrent,
-//     source_code_link: "https://github.com/",
-//   },
-//   {
-//     name: "Job IT",
-//     description:
-//       "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
-//     tags: [
-//       {
-//         name: "react",
-//         color: "blue-text-gradient",
-//       },
-//       {
-//         name: "restapi",
-//         color: "green-text-gradient",
-//       },
-//       {
-//         name: "scss",
-//         color: "pink-text-gradient",
-//       },
-//     ],
-//     image: jobit,
-//     source_code_link: "https://github.com/",
-//   },
-//   {
-//     name: "Trip Guide",
-//     description:
-//       "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
-//     tags: [
-//       {
-//         name: "nextjs",
-//         color: "blue-text-gradient",
-//       },
-//       {
-//         name: "supabase",
-//         color: "green-text-gradient",
-//       },
-//       {
-//         name: "css",
-//         color: "pink-text-gradient",
-//       },
-//     ],
-//     image: tripguide,
-//     source_code_link: "https://github.com/",
-//   },
-// ];
 const projects = [
   {
     name: "AuraPulse – AI Mood Music Recommender",
     description:
-      "AI-powered system detecting user mood with over 71% accuracy using CNN and generating personalized playlists based on detected emotions and preferences.",
+      "AI system achieving 71%+ accuracy in mood detection with CNN, generating personalized playlists in real time.",
     tags: [
       { name: "python", color: "blue-text-gradient" },
       { name: "tensorflow", color: "green-text-gradient" },
       { name: "react", color: "pink-text-gradient" },
     ],
     image: Aurapulse,
-    source_code_link:
-      "https://github.com/shivangrastogi/Final-Year-Project.git",
+    source_code_link: "https://github.com/shivangrastogi/Final-Year-Project.git",
   },
   {
     name: "H2O Sync – Water Issue Reporting App",
     description:
-      "Android app using Maps API and Firebase that allows users to report water-related civic issues with live location sharing and image upload support.",
+      "Android app with Maps API + Firebase, enabling citizens to report civic water issues with geotagged photos.",
     tags: [
       { name: "androidstudio", color: "blue-text-gradient" },
       { name: "firebase", color: "green-text-gradient" },
@@ -248,7 +213,7 @@ const projects = [
   {
     name: "EduPortal – B.Tech Learning Platform",
     description:
-      "Responsive web portal providing students with categorized study material, lecture notes, downloadable resources, and exam preparation guides.",
+      "Responsive portal offering categorized study notes, resources, and exam prep guides for students.",
     tags: [
       { name: "html", color: "blue-text-gradient" },
       { name: "css", color: "green-text-gradient" },
@@ -260,7 +225,7 @@ const projects = [
   {
     name: "Synex – Python Desktop Voice Assistant",
     description:
-      "AI-based desktop assistant with PyQt5 GUI that listens to commands, automates daily tasks, fetches online data, and interacts with APIs efficiently.",
+      "Voice-controlled assistant with PyQt5 UI, automating daily tasks, fetching data, and API integration.",
     tags: [
       { name: "python", color: "blue-text-gradient" },
       { name: "pyqt5", color: "green-text-gradient" },
@@ -273,15 +238,14 @@ const projects = [
   {
     name: "GeoAlert – Landslide Warning System",
     description:
-      "IoT-enabled Arduino system that detects unstable soil and sends instant SMS alerts using real-time sensors and remote wireless monitoring modules.",
+      "IoT-based Arduino solution detecting unstable soil and sending instant SMS alerts via sensors + wireless modules.",
     tags: [
       { name: "arduino", color: "blue-text-gradient" },
       { name: "iot", color: "green-text-gradient" },
       { name: "smsapi", color: "pink-text-gradient" },
     ],
     image: tripguide,
-    source_code_link:
-      "https://github.com/shivangrastogi/Landslide-Detection.git",
+    source_code_link: "https://github.com/shivangrastogi/Landslide-Detection.git",
   },
 ];
 
