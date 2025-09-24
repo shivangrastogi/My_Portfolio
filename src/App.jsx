@@ -41,7 +41,6 @@ const App = () => {
             </div>
           }
         />
-
         {/* Private feedback form link */}
         <Route path="/feedback" element={<FeedbackForm />} />
         <Route path="/thank-you" element={<ThankYouPage />} />
