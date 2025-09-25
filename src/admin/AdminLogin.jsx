@@ -29,6 +29,7 @@ const AdminLogin = () => {
       >
         <h2 className="text-white text-2xl mb-6 font-bold">Admin Login</h2>
         {error && <p className="text-red-500 mb-4">{error}</p>}
+        
         <input
           type="email"
           placeholder="Email"
@@ -37,6 +38,7 @@ const AdminLogin = () => {
           onChange={(e) => setEmail(e.target.value)}
           required
         />
+
         <input
           type="password"
           placeholder="Password"
@@ -45,11 +47,21 @@ const AdminLogin = () => {
           onChange={(e) => setPassword(e.target.value)}
           required
         />
+
         <button
           type="submit"
-          className="w-full py-3 bg-purple-600 rounded-lg text-white font-bold hover:bg-purple-700 transition"
+          className="w-full py-3 bg-purple-600 rounded-lg text-white font-bold hover:bg-purple-700 transition mb-4"
         >
           Login
+        </button>
+
+        {/* ✅ Home Button */}
+        <button
+          type="button"
+          onClick={() => navigate("/")}
+          className="w-full py-3 bg-gray-600 rounded-lg text-white font-bold hover:bg-gray-700 transition"
+        >
+          Home
         </button>
       </form>
     </div>
