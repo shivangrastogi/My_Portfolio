@@ -15,7 +15,7 @@ const AdminLogin = () => {
 
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      navigate("/admin/dashboard"); // redirect to OTP verification
+      navigate("/admin/dashboard"); // ✅ if login succeeds, go to dashboard
     } catch (err) {
       setError(err.message);
     }
