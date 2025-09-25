@@ -22,14 +22,20 @@ const AdminLogin = () => {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-black">
+    <div className="relative min-h-screen flex justify-center items-center bg-black">
+      <button
+        onClick={() => navigate("/")}
+        className="absolute top-6 right-6 py-2 px-4 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition"
+      >
+        Home
+      </button>
+
       <form
         onSubmit={handleLogin}
         className="bg-black-200 p-10 rounded-xl w-full max-w-md"
       >
         <h2 className="text-white text-2xl mb-6 font-bold">Admin Login</h2>
         {error && <p className="text-red-500 mb-4">{error}</p>}
-        
         <input
           type="email"
           placeholder="Email"
@@ -38,7 +44,6 @@ const AdminLogin = () => {
           onChange={(e) => setEmail(e.target.value)}
           required
         />
-
         <input
           type="password"
           placeholder="Password"
@@ -47,21 +52,11 @@ const AdminLogin = () => {
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-
         <button
           type="submit"
-          className="w-full py-3 bg-purple-600 rounded-lg text-white font-bold hover:bg-purple-700 transition mb-4"
+          className="w-full py-3 bg-purple-600 rounded-lg text-white font-bold hover:bg-purple-700 transition"
         >
           Login
-        </button>
-
-        {/* ✅ Home Button */}
-        <button
-          type="button"
-          onClick={() => navigate("/")}
-          className="w-full py-3 bg-gray-600 rounded-lg text-white font-bold hover:bg-gray-700 transition"
-        >
-          Home
         </button>
       </form>
     </div>
