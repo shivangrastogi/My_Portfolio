@@ -11,7 +11,7 @@ const BallSlot = ({ icon }) => {
   });
 
   return (
-    <div ref={ref} className="w-[90px] h-[90px] sm:w-32 sm:h-32 flex-shrink-0">
+    <div ref={ref} className="w-[70px] h-[70px] sm:w-[90px] sm:h-[90px] lg:w-32 lg:h-32 flex-shrink-0">
       {inView && <BallCanvas icon={icon} />}
     </div>
   );
@@ -29,15 +29,15 @@ const Tech = () => {
         <h2 className={styles.sectionHeadText}>Skills.</h2>
       </div>
 
-      {/* Mobile Layout (2x2 Grid Style) */}
-      <div className="grid grid-cols-2 gap-5 sm:hidden justify-items-center">
+      {/* Mobile & Tablet Layout (Flexible Wrap) */}
+      <div className="flex flex-wrap justify-center gap-4 sm:gap-6 lg:hidden">
         {technologies.map((t) => (
           <BallSlot key={t.name} icon={t.icon} />
         ))}
       </div>
 
       {/* Desktop Layout (7, 6, 1) */}
-      <div className="hidden sm:flex flex-col items-center gap-10">
+      <div className="hidden lg:flex flex-col items-center gap-10">
         <div className="flex flex-nowrap justify-center gap-7">
           {row1.map((t) => (
             <BallSlot key={t.name} icon={t.icon} />
