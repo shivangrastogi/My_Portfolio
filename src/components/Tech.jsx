@@ -30,12 +30,12 @@ const Tech = () => {
       </div>
 
       <div className="flex flex-col items-center gap-8 sm:gap-10">
-        <div className="flex flex-nowrap justify-center gap-5 sm:gap-7">
+        <div className="flex flex-wrap justify-center gap-5 sm:gap-7">
           {row1.map((t) => (
             <BallSlot key={t.name} icon={t.icon} />
           ))}
         </div>
-        <div className="flex flex-nowrap justify-center gap-5 sm:gap-7">
+        <div className="flex flex-wrap justify-center gap-5 sm:gap-7">
           {row2.map((t) => (
             <BallSlot key={t.name} icon={t.icon} />
           ))}
