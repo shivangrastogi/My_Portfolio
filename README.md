@@ -53,8 +53,8 @@ To run this project on your local machine:
 ## 📬 Contact
 
 *   **GitHub:** [@shivangrastogi](https://github.com/shivangrastogi)
-*   **Email:** *Your Email Here*
-*   **LinkedIn:** *Your LinkedIn Profile URL*
+*   **Email:** [@shivangrastogi](mailto:shivangrastogi73@gmail.com)
+*   **LinkedIn:** [@shivangrastogi](https://www.linkedin.com/in/rastogishivang/)
 
 ---
 *Designed & Built by Shivang Rastogi*
