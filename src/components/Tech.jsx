@@ -29,13 +29,21 @@ const Tech = () => {
         <h2 className={styles.sectionHeadText}>Skills.</h2>
       </div>
 
-      <div className="flex flex-col items-center gap-8 sm:gap-10">
-        <div className="flex flex-wrap justify-center gap-5 sm:gap-7">
+      {/* Mobile Layout (2x2 Grid Style) */}
+      <div className="grid grid-cols-2 gap-5 sm:hidden justify-items-center">
+        {technologies.map((t) => (
+          <BallSlot key={t.name} icon={t.icon} />
+        ))}
+      </div>
+
+      {/* Desktop Layout (7, 6, 1) */}
+      <div className="hidden sm:flex flex-col items-center gap-10">
+        <div className="flex flex-nowrap justify-center gap-7">
           {row1.map((t) => (
             <BallSlot key={t.name} icon={t.icon} />
           ))}
         </div>
-        <div className="flex flex-wrap justify-center gap-5 sm:gap-7">
+        <div className="flex flex-nowrap justify-center gap-7">
           {row2.map((t) => (
             <BallSlot key={t.name} icon={t.icon} />
           ))}
