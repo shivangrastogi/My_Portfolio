@@ -62,7 +62,7 @@ const Navbar = () => {
         >
           <div className="relative">
             <div className="absolute inset-0 rounded-full bg-ai-cyan/15 blur-sm group-hover:bg-ai-cyan/25 transition-all duration-300" />
-            <img src={myLogo} alt="Shivang logo" className="w-9 h-9 object-contain relative z-10" />
+            <img src={myLogo} alt="Shivang logo" fetchpriority="high" className="w-9 h-9 object-contain relative z-10" />
           </div>
           <div className="flex flex-col leading-tight">
             <span className="text-white text-[17px] font-bold font-mono">Shivang</span>

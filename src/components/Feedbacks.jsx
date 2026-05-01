@@ -49,8 +49,8 @@ const Feedbacks = () => {
         const snapshot = await getDocs(q);
         const data = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
         setTestimonials(data);
-      } catch (error) {
-        console.error("Error fetching testimonials:", error);
+      } catch {
+        // silently fail — empty state is shown to the user
       }
     };
     fetchTestimonials();
@@ -91,4 +91,4 @@ const Feedbacks = () => {
   );
 };
 
-export default SectionWrapper(Feedbacks, "");
+export default SectionWrapper(Feedbacks, "testimonials");

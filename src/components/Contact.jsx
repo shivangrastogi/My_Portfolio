@@ -124,9 +124,8 @@ const Contact = () => {
           setModalMessage("✅ Your message has been sent successfully! I will get back to you soon.");
           setForm({ name: "", email: "", message: "" });
         },
-        (error) => {
+        () => {
           setLoading(false);
-          console.error(error);
           setModalMessage("⚠️ Oops! Something went wrong. Please try again.");
         }
       );

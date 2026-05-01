@@ -17,7 +17,7 @@ const TAG_STYLES = {
 const FeaturedCard = ({ name, description, tags, image, source_code_link }) => (
   <motion.div
     variants={fadeIn("up", "spring", 0, 0.7)}
-    onClick={() => window.open(source_code_link, "_blank")}
+    onClick={() => window.open(source_code_link, "_blank", "noopener,noreferrer")}
     className="w-full relative border border-ai-cyan/25 rounded-2xl overflow-hidden group transition-all duration-300 hover:border-ai-cyan/50 hover:shadow-glow-cyan cursor-pointer"
   >
     {/* Featured badge */}
@@ -28,10 +28,11 @@ const FeaturedCard = ({ name, description, tags, image, source_code_link }) => (
 
     {/* GitHub link */}
     <button
-      onClick={() => window.open(source_code_link, "_blank")}
+      onClick={(e) => { e.stopPropagation(); window.open(source_code_link, "_blank", "noopener,noreferrer"); }}
+      aria-label={`View ${name} on GitHub`}
       className="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-black/60 border border-ai-cyan/30 flex items-center justify-center backdrop-blur-sm hover:bg-ai-cyan/20 hover:border-ai-cyan/60 transition-all"
     >
-      <img src={github} alt="github" className="w-5 h-5 object-contain" />
+      <img src={github} alt="" className="w-5 h-5 object-contain" />
     </button>
 
     <div className="flex flex-col lg:flex-row">
@@ -71,7 +72,7 @@ const FeaturedCard = ({ name, description, tags, image, source_code_link }) => (
 const ProjectCard = ({ index, name, description, tags, image, source_code_link }) => (
   <motion.div
     variants={fadeIn("up", "spring", (index - 1) * 0.15, 0.6)}
-    onClick={() => window.open(source_code_link, "_blank")}
+    onClick={() => window.open(source_code_link, "_blank", "noopener,noreferrer")}
     className="w-full sm:w-[360px] flex flex-col border border-white/6 rounded-2xl overflow-hidden group transition-all duration-300 hover:border-ai-purple/40 hover:shadow-glow-purple bg-[#060f1e] cursor-pointer"
   >
     <div className="relative h-[200px] overflow-hidden">
@@ -84,10 +85,11 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link }
       />
       <div className="absolute inset-0 bg-gradient-to-t from-[#060f1e] via-transparent to-transparent" />
       <button
-        onClick={() => window.open(source_code_link, "_blank")}
+        onClick={(e) => { e.stopPropagation(); window.open(source_code_link, "_blank", "noopener,noreferrer"); }}
+        aria-label={`View ${name} on GitHub`}
         className="absolute top-3 right-3 w-9 h-9 rounded-full bg-black/60 border border-white/20 flex items-center justify-center hover:bg-ai-purple/30 hover:border-ai-purple/60 transition-all backdrop-blur-sm"
       >
-        <img src={github} alt="github" className="w-4 h-4 object-contain" />
+        <img src={github} alt="" className="w-4 h-4 object-contain" />
       </button>
     </div>
 
@@ -117,7 +119,7 @@ const Works = () => {
       const isFirst = index === 0;
       return (
         <div
-          onClick={() => window.open(project.source_code_link, "_blank")}
+          onClick={() => window.open(project.source_code_link, "_blank", "noopener,noreferrer")}
           className={`cursor-pointer ${isFirst ? "w-full border border-ai-cyan/25 rounded-2xl overflow-hidden bg-[#060f1e]" : "w-full border border-white/6 rounded-2xl overflow-hidden bg-[#060f1e]"}`}
         >
           {isFirst && (
@@ -130,10 +132,11 @@ const Works = () => {
             <img src={project.image} alt={project.name} loading="lazy" decoding="async" className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#060f1e] via-transparent to-transparent" />
             <button
-              onClick={() => window.open(project.source_code_link, "_blank")}
+              onClick={(e) => { e.stopPropagation(); window.open(project.source_code_link, "_blank", "noopener,noreferrer"); }}
+              aria-label={`View ${project.name} on GitHub`}
               className="absolute top-3 right-3 w-9 h-9 rounded-full bg-black/60 border border-white/20 flex items-center justify-center backdrop-blur-sm"
             >
-              <img src={github} alt="github" className="w-4 h-4 object-contain" />
+              <img src={github} alt="" className="w-4 h-4 object-contain" />
             </button>
           </div>
           <div className="p-5">

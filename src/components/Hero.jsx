@@ -197,7 +197,7 @@ const Hero = () => {
 
       {/* Scroll indicator */}
       <div className="absolute xs:bottom-8 bottom-28 w-full flex justify-center items-center pointer-events-none">
-        <a href="#about" className="pointer-events-auto">
+        <a href="#about" aria-label="Scroll to About section" className="pointer-events-auto">
           <div className="w-[30px] h-[54px] rounded-3xl border-2 border-ai-cyan/45 flex justify-center items-start p-2 hover:border-ai-cyan/80 transition-colors shadow-glow-cyan">
             <motion.div
               animate={{ y: [0, 18, 0] }}

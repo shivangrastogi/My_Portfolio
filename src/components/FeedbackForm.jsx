@@ -60,8 +60,8 @@ const FeedbackForm = () => {
 
       // Redirect to thank you page instead of alert
       navigate("/thank-you");
-    } catch (error) {
-      console.error("Error submitting testimonial:", error);
+    } catch {
+      // submission failed silently — user stays on form
     }
   };
 

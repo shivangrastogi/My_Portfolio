@@ -96,7 +96,7 @@ const Footer = () => (
       <div className="w-full flex flex-col sm:flex-row justify-between items-center gap-4 pt-4 border-t border-white/5">
         {/* Logo + name */}
         <div className="flex items-center gap-2.5">
-          <img src={myLogo} alt="logo" className="w-7 h-7 object-contain opacity-80" />
+          <img src={myLogo} alt="Shivang Rastogi" className="w-7 h-7 object-contain opacity-80" />
           <span className="text-secondary text-[13px] font-mono">
             Shivang Rastogi
           </span>

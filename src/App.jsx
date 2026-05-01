@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
+import NotFound from "./components/NotFound";
 
 const Hero       = lazy(() => import("./components/Hero"));
 const About      = lazy(() => import("./components/About"));
@@ -35,29 +36,40 @@ const App = () => {
             path="/"
             element={
               <div className="relative z-0 bg-primary">
-                {/* Hero — full bleed */}
-                <div>
+                {/* Skip to main content — hidden until focused by keyboard */}
+                <a
+                  href="#main-content"
+                  className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:rounded-lg focus:bg-ai-cyan focus:text-primary focus:font-bold focus:text-[14px]"
+                >
+                  Skip to main content
+                </a>
+
+                <header>
                   <Navbar />
+                </header>
+
+                <main id="main-content">
+                  {/* Hero — full bleed */}
                   <Hero />
-                </div>
 
-                {/* Content sections */}
-                <About />
-                <Divider />
-                <Experience />
-                <Divider />
-                <Tech />
-                <Divider />
-                <Works />
-                <Divider />
-                <Feedbacks />
-                <Divider />
+                  {/* Content sections */}
+                  <About />
+                  <Divider />
+                  <Experience />
+                  <Divider />
+                  <Tech />
+                  <Divider />
+                  <Works />
+                  <Divider />
+                  <Feedbacks />
+                  <Divider />
 
-                {/* Contact + stars */}
-                <div className="relative z-0">
-                  <Contact />
-                  <StarsCanvas />
-                </div>
+                  {/* Contact + stars */}
+                  <div className="relative z-0">
+                    <Contact />
+                    <StarsCanvas />
+                  </div>
+                </main>
 
                 <Footer />
                 <ScrollToTop />
@@ -68,6 +80,7 @@ const App = () => {
           <Route path="/thank-you"         element={<ThankYouPage />} />
           <Route path="/admin/login"       element={<AdminLogin />} />
           <Route path="/admin/dashboard"   element={<AdminDashboard />} />
+          <Route path="*"                  element={<NotFound />} />
         </Routes>
       </Suspense>
     </BrowserRouter>

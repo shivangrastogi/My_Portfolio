@@ -2,52 +2,79 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="./src/assets/myLogo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Primary SEO -->
+    <!-- ── Favicon ── -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/myLogo.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/myLogo.png" />
+    <link rel="apple-touch-icon" href="/myLogo.png" />
+
+    <!-- ── Primary SEO ── -->
     <title>Shivang Rastogi | AI/ML Engineer & Full-Stack Developer</title>
-    <meta name="description" content="Shivang Rastogi — AI/ML Engineer & Full-Stack Developer. Creator of A.E.R.I.S AI assistant. Specializing in Deep Learning, Computer Vision, React, Firebase, and Shopify development." />
-    <meta name="keywords" content="Shivang Rastogi, AI engineer, ML engineer, full-stack developer, Shopify developer, deep learning, computer vision, Python, TensorFlow, OpenCV, React, Firebase, A.E.R.I.S, portfolio" />
+    <meta name="description" content="Shivang Rastogi — AI/ML Engineer & Full-Stack Developer based in India. Creator of A.E.R.I.S AI assistant. Specializing in Deep Learning, Computer Vision, React, Firebase, and Shopify development." />
+    <meta name="keywords" content="Shivang Rastogi, AI engineer, ML engineer, full-stack developer, Shopify developer, deep learning, computer vision, Python, TensorFlow, OpenCV, React, Firebase, A.E.R.I.S, SehatUP, portfolio" />
     <meta name="author" content="Shivang Rastogi" />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <link rel="canonical" href="https://shivangrastogi.dev/" />
 
-    <!-- Open Graph / LinkedIn / Facebook -->
+    <!-- ── Open Graph / LinkedIn / Facebook ── -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://shivangrastogi.dev/" />
     <meta property="og:title" content="Shivang Rastogi | AI/ML Engineer & Full-Stack Developer" />
     <meta property="og:description" content="Creator of A.E.R.I.S AI assistant. Building intelligent systems with Deep Learning, Computer Vision, and full-stack web applications." />
-    <meta property="og:image" content="./src/assets/myLogo.png" />
+    <meta property="og:image" content="https://shivangrastogi.dev/myLogo.png" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+    <meta property="og:image:alt" content="Shivang Rastogi — AI/ML Engineer" />
     <meta property="og:site_name" content="Shivang Rastogi Portfolio" />
     <meta property="og:locale" content="en_US" />
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
+    <!-- ── Twitter Card ── -->
+    <meta name="twitter:card" content="summary" />
     <meta name="twitter:url" content="https://shivangrastogi.dev/" />
     <meta name="twitter:title" content="Shivang Rastogi | AI/ML Engineer & Full-Stack Developer" />
     <meta name="twitter:description" content="Creator of A.E.R.I.S AI assistant. Building intelligent systems, deep learning models, and full-stack applications." />
-    <meta name="twitter:image" content="./src/assets/myLogo.png" />
+    <meta name="twitter:image" content="https://shivangrastogi.dev/myLogo.png" />
+    <meta name="twitter:image:alt" content="Shivang Rastogi — AI/ML Engineer" />
 
-    <!-- Performance hints -->
+    <!-- ── Performance hints ── -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="dns-prefetch" href="https://firestore.googleapis.com" />
 
-    <!-- Theme -->
+    <!-- ── Google Fonts — non-blocking (media=print trick) ── -->
+    <!-- Trimmed to weights actually used; removes 100/200/300 which were never referenced -->
+    <link rel="preload" as="style"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" />
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap"
+      media="print" onload="this.media='all'" />
+    <noscript>
+      <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" />
+    </noscript>
+
+    <!-- ── Theme ── -->
     <meta name="theme-color" content="#020b18" />
     <meta name="color-scheme" content="dark" />
+    <meta name="application-name" content="Shivang Rastogi Portfolio" />
 
-    <!-- Structured Data -->
+    <!-- ── Structured Data: Person ── -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Shivang Rastogi",
-      "jobTitle": "AI/ML Engineer & Full-Stack Developer",
-      "description": "AI/ML Engineer specializing in Deep Learning, Computer Vision, and full-stack web development. Creator of A.E.R.I.S AI laptop assistant.",
       "url": "https://shivangrastogi.dev/",
-      "email": "shivangrastogi73@gmail.com",
+      "image": "https://shivangrastogi.dev/myLogo.png",
+      "jobTitle": "AI/ML Engineer & Full-Stack Developer",
+      "description": "AI/ML Engineer specializing in Deep Learning, Computer Vision, and full-stack web development. Creator of A.E.R.I.S — an AI laptop assistant.",
+      "email": "bossshivang@gmail.com",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "SehatUP",
+        "url": "https://sehatup.in"
+      },
       "knowsAbout": [
         "Artificial Intelligence",
         "Machine Learning",
@@ -59,15 +86,22 @@
         "React",
         "Firebase",
         "Shopify Development",
-        "Full-Stack Development"
+        "Full-Stack Development",
+        "Natural Language Processing"
       ],
-      "alumniOf": {
-        "@type": "EducationalOrganization",
-        "name": "Engineering College"
-      },
       "sameAs": [
         "https://github.com/shivangrastogi"
       ]
+    }
+    </script>
+
+    <!-- ── Structured Data: WebSite (enables Sitelinks Search Box) ── -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Shivang Rastogi Portfolio",
+      "url": "https://shivangrastogi.dev/"
     }
     </script>
   </head>
