@@ -1,7 +1,3 @@
-import backend from "./backend.png";
-import creator from "./creator.png";
-import mobile from "./mobile.png";
-import web from "./web.png";
 import github from "./github.png";
 import menu from "./menu.svg";
 import close from "./close.svg";
@@ -20,7 +16,7 @@ import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
 import python from "./tech/python.png";
-import tensorflow from "./TensorFlow.png";
+import tensorflow from "./tech/tensorflow.png";
 import sql from "./SQL.png";
 import opencv from "./tech/opencv.png";
 import numpy from "./tech/numpy.png";
@@ -35,17 +31,9 @@ import tesla from "./company/tesla.png";
 import sehatUP from "./company/sehatUP.png";
 import APMobility from "./company/APMobility.png";
 
-import carrent from "./carrent.png";
-import jobit from "./jobit.png";
-import tripguide from "./tripguide.png";
 import aeris from "./A-E-R-I-S.jpeg";
-import synex from "./Synex.png";
 
 export {
-  backend,
-  creator,
-  mobile,
-  web,
   github,
   menu,
   close,
@@ -74,11 +62,7 @@ export {
   shopify,
   starbucks,
   tesla,
-  carrent,
-  jobit,
-  tripguide,
   aeris,
-  synex,
   sehatUP,
   APMobility,
 };

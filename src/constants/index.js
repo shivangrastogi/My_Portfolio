@@ -1,12 +1,8 @@
 import {
-  mobile,
-  backend,
-  creator,
-  web,
+  github,
   javascript,
   reactjs,
   git,
-  synex,
   python,
   tensorflow,
   opencv,
@@ -44,19 +40,19 @@ export const navLinks = [
 const services = [
   {
     title: "AI / ML Engineer",
-    icon: backend,
+    icon: python,
   },
   {
     title: "Deep Learning & CV",
-    icon: mobile,
+    icon: reactjs,
   },
   {
     title: "Automation Specialist",
-    icon: creator,
+    icon: github,
   },
   {
     title: "Full-Stack Developer",
-    icon: web,
+    icon: javascript,
   },
 ];
 
