@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { styles } from "../styles";
 import { navLinks } from "../constants";
-import myLogo from "../assets/myLogo.png";
+import myLogo from "../assets/myLogo.webp";
 
 const Navbar = () => {
   const [active, setActive]   = useState("");

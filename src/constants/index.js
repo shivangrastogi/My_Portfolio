@@ -19,8 +19,8 @@ import {
   APMobility,
 } from "../assets";
 
-import Aurapulse from "../assets/Aurapulse.png";
-import H2OSync from "../assets/H2O.jpg";
+import Aurapulse from "../assets/Aurapulse.webp";
+import H2OSync from "../assets/H2O.webp";
 
 export const navLinks = [
   {
