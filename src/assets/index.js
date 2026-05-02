@@ -19,6 +19,8 @@ import sehatUP from "./company/sehatUP.webp";
 import APMobility from "./company/APMobility.webp";
 
 import aeris from "./A-E-R-I-S.webp";
+import herobg from "./herobg.webp";
+import RAG from "./RAG.webp";
 
 export {
   github,
@@ -37,6 +39,8 @@ export {
   sql,
   firebase_tech,
   aeris,
+  herobg,
+  RAG,
   sehatUP,
   APMobility,
 };
