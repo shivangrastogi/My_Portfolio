@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import ReactDOM from "react-dom";
 import { motion } from "framer-motion";
 import useIsMobile from "./hooks/useIsMobile";
 import { styles } from "../styles";
@@ -14,7 +15,71 @@ const TAG_STYLES = {
   "orange-text-gradient": "text-orange-400 border-orange-400/30 bg-orange-400/5",
 };
 
-const FeaturedCard = ({ name, description, tags, image, source_code_link }) => (
+const VideoModal = ({ src, poster, onClose }) => {
+  useEffect(() => {
+    const onKey = (e) => { if (e.key === "Escape") onClose(); };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [onClose]);
+
+  return ReactDOM.createPortal(
+    <div
+      className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/95"
+      onClick={onClose}
+    >
+      <div
+        className="relative w-full max-w-4xl mx-4"
+        onClick={(e) => e.stopPropagation()}
+      >
+        {/* Close hint */}
+        <div className="flex justify-end mb-2 pr-1">
+          <button
+            onClick={onClose}
+            aria-label="Close video"
+            className="flex items-center gap-2 text-white/60 hover:text-white text-[12px] font-mono transition-colors"
+          >
+            <span>ESC to close</span>
+            <span className="w-6 h-6 rounded border border-white/30 flex items-center justify-center text-[11px] hover:border-white/60">✕</span>
+          </button>
+        </div>
+
+        {/* Video container */}
+        <div className="rounded-xl overflow-hidden border border-ai-cyan/25">
+          <video
+            src={src}
+            poster={poster}
+            controls
+            autoPlay
+            loop
+            playsInline
+            controlsList="nodownload"
+            disablePictureInPicture
+            onContextMenu={(e) => e.preventDefault()}
+            className="w-full block bg-black"
+            style={{ display: "block", maxHeight: "80vh" }}
+          />
+        </div>
+      </div>
+    </div>,
+    document.body
+  );
+};
+
+const PlayOverlay = ({ onClick }) => (
+  <button
+    onClick={onClick}
+    aria-label="Watch demo video"
+    className="absolute inset-0 flex items-center justify-center group/play bg-black/25 hover:bg-black/15 transition-colors duration-200"
+  >
+    <div className="w-[60px] h-[60px] rounded-full bg-black/65 border-2 border-ai-cyan/70 flex items-center justify-center backdrop-blur-sm shadow-[0_0_24px_rgba(0,212,255,0.45)] group-hover/play:scale-110 group-hover/play:border-ai-cyan group-hover/play:bg-ai-cyan/25 transition-all duration-200">
+      <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 text-ai-cyan ml-0.5">
+        <path d="M8 5v14l11-7z" />
+      </svg>
+    </div>
+  </button>
+);
+
+const FeaturedCard = ({ name, description, tags, image, source_code_link, video, onPlayVideo }) => (
   <motion.div
     variants={fadeIn("up", "spring", 0, 0.7)}
     onClick={() => window.open(source_code_link, "_blank", "noopener,noreferrer")}
@@ -36,7 +101,7 @@ const FeaturedCard = ({ name, description, tags, image, source_code_link }) => (
     </button>
 
     <div className="flex flex-col lg:flex-row">
-      {/* Image */}
+      {/* Image / video thumbnail */}
       <div className="lg:w-[55%] h-[240px] lg:h-auto relative overflow-hidden">
         <img
           src={image}
@@ -45,8 +110,9 @@ const FeaturedCard = ({ name, description, tags, image, source_code_link }) => (
           decoding="async"
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#020b18] hidden lg:block" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#020b18] to-transparent lg:hidden" />
+        {video && (
+          <PlayOverlay onClick={(e) => { e.stopPropagation(); onPlayVideo(); }} />
+        )}
       </div>
 
       {/* Content */}
@@ -110,57 +176,68 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link }
   </motion.div>
 );
 
+const MobileCard = ({ project, index, onPlayVideo }) => {
+  const isFirst = index === 0;
+  return (
+    <div
+      onClick={() => window.open(project.source_code_link, "_blank", "noopener,noreferrer")}
+      className={`cursor-pointer ${isFirst ? "w-full border border-ai-cyan/25 rounded-2xl overflow-hidden bg-[#060f1e]" : "w-full border border-white/6 rounded-2xl overflow-hidden bg-[#060f1e]"}`}
+    >
+      {isFirst && (
+        <div className="flex items-center gap-1.5 px-4 py-2 bg-ai-cyan/8 border-b border-ai-cyan/15">
+          <span className="w-1.5 h-1.5 rounded-full bg-ai-cyan animate-glow-pulse" />
+          <span className="text-ai-cyan text-[10px] font-mono font-bold tracking-wider">FEATURED PROJECT</span>
+        </div>
+      )}
+      <div className="relative h-[200px] overflow-hidden">
+        <img src={project.image} alt={project.name} loading="lazy" decoding="async" className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#060f1e] via-transparent to-transparent" />
+        {onPlayVideo && (
+          <PlayOverlay onClick={(e) => { e.stopPropagation(); onPlayVideo(); }} />
+        )}
+        <button
+          onClick={(e) => { e.stopPropagation(); window.open(project.source_code_link, "_blank", "noopener,noreferrer"); }}
+          aria-label={`View ${project.name} on GitHub`}
+          className="absolute top-3 right-3 w-9 h-9 rounded-full bg-black/60 border border-white/20 flex items-center justify-center backdrop-blur-sm"
+        >
+          <img src={github} alt="" className="w-4 h-4 object-contain" />
+        </button>
+      </div>
+      <div className="p-5">
+        <h3 className="text-white font-bold text-[18px] mb-2">{project.name}</h3>
+        <p className="text-secondary text-[13px] leading-relaxed mb-3">{project.description}</p>
+        <div className="flex flex-wrap gap-1.5">
+          {project.tags.map((tag) => (
+            <span
+              key={tag.name}
+              className={`text-[11px] font-mono font-bold px-2 py-0.5 rounded border ${TAG_STYLES[tag.color] || "text-white border-white/20"}`}
+            >
+              #{tag.name}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const Works = () => {
   const isMobile = useIsMobile();
+  const [activeVideo, setActiveVideo] = useState(null);
   const [featured, ...rest] = projects;
 
-  const CardWrapper = ({ project, index }) => {
-    if (isMobile) {
-      const isFirst = index === 0;
-      return (
-        <div
-          onClick={() => window.open(project.source_code_link, "_blank", "noopener,noreferrer")}
-          className={`cursor-pointer ${isFirst ? "w-full border border-ai-cyan/25 rounded-2xl overflow-hidden bg-[#060f1e]" : "w-full border border-white/6 rounded-2xl overflow-hidden bg-[#060f1e]"}`}
-        >
-          {isFirst && (
-            <div className="flex items-center gap-1.5 px-4 py-2 bg-ai-cyan/8 border-b border-ai-cyan/15">
-              <span className="w-1.5 h-1.5 rounded-full bg-ai-cyan animate-glow-pulse" />
-              <span className="text-ai-cyan text-[10px] font-mono font-bold tracking-wider">FEATURED PROJECT</span>
-            </div>
-          )}
-          <div className="relative h-[200px] overflow-hidden">
-            <img src={project.image} alt={project.name} loading="lazy" decoding="async" className="w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#060f1e] via-transparent to-transparent" />
-            <button
-              onClick={(e) => { e.stopPropagation(); window.open(project.source_code_link, "_blank", "noopener,noreferrer"); }}
-              aria-label={`View ${project.name} on GitHub`}
-              className="absolute top-3 right-3 w-9 h-9 rounded-full bg-black/60 border border-white/20 flex items-center justify-center backdrop-blur-sm"
-            >
-              <img src={github} alt="" className="w-4 h-4 object-contain" />
-            </button>
-          </div>
-          <div className="p-5">
-            <h3 className="text-white font-bold text-[18px] mb-2">{project.name}</h3>
-            <p className="text-secondary text-[13px] leading-relaxed mb-3">{project.description}</p>
-            <div className="flex flex-wrap gap-1.5">
-              {project.tags.map((tag) => (
-                <span
-                  key={tag.name}
-                  className={`text-[11px] font-mono font-bold px-2 py-0.5 rounded border ${TAG_STYLES[tag.color] || "text-white border-white/20"}`}
-                >
-                  #{tag.name}
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
-      );
-    }
-    return null;
-  };
+  const openVideo = (project) => setActiveVideo({ src: project.video, poster: project.image });
 
   return (
     <>
+      {activeVideo && (
+        <VideoModal
+          src={activeVideo.src}
+          poster={activeVideo.poster}
+          onClose={() => setActiveVideo(null)}
+        />
+      )}
+
       <motion.div variants={textVariant()}>
         <p className={styles.sectionSubText}>My work</p>
         <h2 className={styles.sectionHeadText}>Projects.</h2>
@@ -178,14 +255,22 @@ const Works = () => {
       {isMobile ? (
         <div className="mt-10 flex flex-col gap-6">
           {projects.map((project, index) => (
-            <CardWrapper key={index} project={project} index={index} />
+            <MobileCard
+              key={index}
+              project={project}
+              index={index}
+              onPlayVideo={project.video ? () => openVideo(project) : null}
+            />
           ))}
         </div>
       ) : (
         <>
           {/* Desktop: Featured card */}
           <div className="mt-12">
-            <FeaturedCard {...featured} />
+            <FeaturedCard
+              {...featured}
+              onPlayVideo={featured.video ? () => openVideo(featured) : null}
+            />
           </div>
 
           {/* Desktop: Other projects */}

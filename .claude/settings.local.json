@@ -12,7 +12,9 @@
       "Bash(node -e \"const fs=require\\('fs'\\); const content=fs.readFileSync\\('node_modules/@react-three/fiber/dist/react-three-fiber.cjs.dev.js','utf8'\\); const idx=content.indexOf\\('events.connect\\('\\); console.log\\(content.slice\\(Math.max\\(0,idx-200\\), idx+500\\)\\);\")",
       "Bash(node -e \"const fs=require\\('fs'\\); const content=fs.readFileSync\\('node_modules/@react-three/fiber/dist/react-three-fiber.cjs.dev.js','utf8'\\); const idx=content.indexOf\\('DOM_EVENTS'\\); console.log\\(content.slice\\(Math.max\\(0,idx-50\\), idx+600\\)\\);\")",
       "Bash(node -e \"const content=require\\('fs'\\).readFileSync\\('src/constants/index.js','utf8'\\); const idx=content.indexOf\\('projects'\\); console.log\\(content.slice\\(idx, idx+800\\)\\);\")",
-      "Bash(awk '{print $5, $9}')"
+      "Bash(awk '{print $5, $9}')",
+      "Bash(dir \"C:\\\\Users\\\\Shivang\\\\Downloads\\\\my-portfolio\\\\My_Portfolio\" /b)",
+      "Bash(findstr webm *)"
     ]
   }
 }

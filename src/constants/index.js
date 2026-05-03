@@ -15,6 +15,8 @@ import {
   tailwind,
   firebase_tech,
   aeris,
+  herobg,
+  RAG,
   sehatUP,
   APMobility,
 } from "../assets";
@@ -143,7 +145,8 @@ const projects = [
       { name: "automation", color: "orange-text-gradient" },
     ],
     image: aeris,
-    source_code_link: "https://github.com/shivangrastogi",
+    video: "/A.E.R.I.S.webm",
+    source_code_link: "https://github.com/shivangrastogi/S.Y.N.E.X",
   },
 
   {
@@ -157,6 +160,19 @@ const projects = [
     ],
     image: Aurapulse,
     source_code_link: "https://github.com/shivangrastogi/Final-Year-Project.git",
+  },
+  {
+    name: "RAG System for YouTube Video Transcripts",
+    description:
+      "A Retrieval-Augmented Generation pipeline that converts YouTube video content into searchable transcript chunks, creates vector embeddings, and answers queries with timestamps and video references.",
+    tags: [
+      { name: "rag", color: "orange-text-gradient" },
+      { name: "youtube", color: "blue-text-gradient" },
+      { name: "embeddings", color: "green-text-gradient" },
+      { name: "llm", color: "pink-text-gradient" },
+    ],
+    image: RAG,
+    source_code_link: "https://github.com/shivangrastogi/RAG-based-AI-Teaching-Assistant",
   },
   {
     name: "H2O Sync – Smart Water Tracker",
