@@ -415,6 +415,11 @@
   to   { transform: translate3d(-50%, 0, 0); }
 }
 
+@keyframes marqueeScrollReverse {
+  from { transform: translate3d(-50%, 0, 0); }
+  to   { transform: translate3d(0, 0, 0); }
+}
+
 .marquee-track {
   width: max-content;
   animation: marqueeScroll 32s linear infinite;
@@ -424,7 +429,17 @@
   transform: translate3d(0, 0, 0);
 }
 
-.marquee-wrapper:hover .marquee-track {
+.marquee-track-reverse {
+  width: max-content;
+  animation: marqueeScrollReverse 24s linear infinite;
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translate3d(-50%, 0, 0);
+}
+
+.marquee-wrapper:hover .marquee-track,
+.marquee-wrapper:hover .marquee-track-reverse {
   animation-play-state: paused;
 }
 
@@ -441,12 +456,14 @@
 
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .marquee-track { animation: none; }
+  .marquee-track,
+  .marquee-track-reverse { animation: none; }
 }
 
 /* Slower on small screens (visually faster otherwise because viewport is narrower) */
 @media (max-width: 640px) {
   .marquee-track { animation-duration: 26s; }
+  .marquee-track-reverse { animation-duration: 20s; }
 }
 
 /* ── Section divider ── */
