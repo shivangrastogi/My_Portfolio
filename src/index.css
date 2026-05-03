@@ -9,8 +9,11 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
-  scroll-behavior: smooth;
   color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 .hash-span {
@@ -94,7 +97,6 @@
 .ai-card-border {
   border: 1px solid rgba(0, 212, 255, 0.12);
   background: linear-gradient(135deg, rgba(0, 212, 255, 0.04), rgba(124, 58, 237, 0.04));
-  backdrop-filter: blur(8px);
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -199,9 +201,9 @@
 /* ── Floating orb ── */
 .orb {
   border-radius: 50%;
-  filter: blur(60px);
   position: absolute;
   pointer-events: none;
+  will-change: transform;
 }
 
 /* ── Keyframes ── */
@@ -436,6 +438,10 @@
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   transform: translate3d(-50%, 0, 0);
+}
+
+.marquee-wrapper {
+  touch-action: pan-y;
 }
 
 .marquee-wrapper:hover .marquee-track,
